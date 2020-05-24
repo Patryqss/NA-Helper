@@ -76,6 +76,9 @@ class AllChars extends React.Component {
                     {this.state.active === 'filters' && <CharFilter callbackFromParent={this.getCharFilters} />}
                     {this.state.active === 'skillFilters' && <SkillFilter callbackFromParent={this.getSkillFilters} />}
                 </div>
+                <div className="footer">
+                    Made by Neji1113 / Patryqss
+                </div>
             </div>
         )
     }
