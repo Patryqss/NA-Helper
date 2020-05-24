@@ -1,0 +1,43 @@
+{
+  "name": "na_helper",
+  "version": "1.0.0",
+  "description": "Useful tool for playing Naruto-Arena",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,json,scss,html}\"",
+    "mon": "nodemon -r dotenv/config ./backend/app.js",
+    "dev": "concurrently -n react,express -k \"cd frontend && npm run start\" \"npm run mon\"",
+    "postinstall": "\"cd frontend && npm i\"",
+    "start": "node -r dotenv/config ./backend/app.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "keywords": [
+    "naruto",
+    "arena",
+    "nahelper",
+    "JavaScript"
+  ],
+  "author": "Patryk Grzyb",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "file-loader": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "config": "^3.2.6",
+    "css-loader": "^3.4.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "joi": "^14.3.1",
+    "joi-objectid": "^3.0.1",
+    "mongoose": "^5.9.2",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "style-loader": "^1.1.3"
+  }
+}
