@@ -71,7 +71,6 @@ class AllChars extends React.Component {
                 <div className="buttons">
                     <Menu callbackFromParent={this.getInfoFromMenu} />
                 </div>
-                {console.log('Looking for something? ;)')}
                 <div className="charInfo">
                     {this.state.active === 'charInfo' && <CharInfo id={this.state.id} />}
                     {this.state.active === 'filters' && <CharFilter callbackFromParent={this.getCharFilters} />}
