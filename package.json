@@ -7,7 +7,6 @@
     "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,json,scss,html}\"",
     "mon": "nodemon -r dotenv/config ./backend/app.js",
     "dev": "concurrently -n react,express -k \"cd frontend && npm run start\" \"npm run mon\"",
-    "postinstall": "\"cd frontend && npm i\"",
     "start": "node -r dotenv/config ./backend/app.js",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
