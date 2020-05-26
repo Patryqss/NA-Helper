@@ -5,6 +5,7 @@ import CharInfo from '../CharInfo';
 import Menu from '../Menu';
 import CharFilter from '../Filters/charFilter';
 import SkillFilter from '../Filters/skillFilter';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 class AllChars extends React.Component {
@@ -15,6 +16,7 @@ class AllChars extends React.Component {
         this.getInfoFromMenu = this.getInfoFromMenu.bind(this);
         this.getSkillFilters = this.getSkillFilters.bind(this);
         this.getCharFilters = this.getCharFilters.bind(this);
+        this.getSearchResult = this.getSearchResult.bind(this);
     }
 
     getData = async () => {
@@ -34,6 +36,14 @@ class AllChars extends React.Component {
 
     getInfoFromMenu(whatIsActive) {
         this.setState({ active: whatIsActive, filteredChars: this.state.chars })
+    }
+
+    getSearchResult(term) {
+        const filterChars = []
+        this.state.chars.filter(char => {
+            if (char.name.toLowerCase().includes(term.toLowerCase())) filterChars.push(char);
+        })
+        this.setState({ filteredChars: filterChars })
     }
 
     getSkillFilters(includeAbilities, excludeAbilities) {
@@ -62,24 +72,29 @@ class AllChars extends React.Component {
 
     render() {
         return (
-            <div>
+            <>
                 <div className="chars">
                     {this.state.filteredChars.map(x => (
                         <img onClick={this.handleAvatarClick} key={x._id} alt={x.name} src={x.avatar} id={x._id} className="facepic"/>
                     ))}
                 </div>
-                <div className="buttons">
-                    <Menu callbackFromParent={this.getInfoFromMenu} />
+                <div className="searchBar">
+                        <SearchBar callbackFromParent={this.getSearchResult} />
                 </div>
-                <div className="charInfo">
-                    {this.state.active === 'charInfo' && <CharInfo id={this.state.id} />}
-                    {this.state.active === 'filters' && <CharFilter callbackFromParent={this.getCharFilters} />}
-                    {this.state.active === 'skillFilters' && <SkillFilter callbackFromParent={this.getSkillFilters} />}
+                <div className="bottomThings">
+                    <div className="buttons">
+                        <Menu callbackFromParent={this.getInfoFromMenu} />
+                    </div>
+                    <div className="charInfo">
+                        {this.state.active === 'charInfo' && <CharInfo id={this.state.id} />}
+                        {this.state.active === 'filters' && <CharFilter callbackFromParent={this.getCharFilters} />}
+                        {this.state.active === 'skillFilters' && <SkillFilter callbackFromParent={this.getSkillFilters} />}
+                    </div>
                 </div>
                 <div className="footer">
-                    Made by Neji1113 / Patryqss
+                        Made by Neji1113 / Patryqss
                 </div>
-            </div>
+            </>
         )
     }
 }

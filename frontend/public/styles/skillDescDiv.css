@@ -1,0 +1,47 @@
+.skillDescription {
+    position: relative;
+    background-color: honeydew;
+    border: 2px solid black;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: pre-wrap;
+}
+
+.skilOrCharName {
+    color: rgb(154,1,1);
+    text-align: center;
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.skillOrCharDesc {
+    margin: 0 0.5em;
+    text-align: justify;
+    font-size: small;
+}
+
+.skillCooldown {
+    position: absolute;
+    bottom: 2em;
+    font-size: x-small;
+    right: 0.5em;
+    text-align: right;
+}
+
+.skillCost {
+    position: absolute;
+    bottom: 0.5em;
+    display: flex;
+    font-size: x-small;
+    align-items: center;
+    right: 0.5em;
+    text-align: right;
+}
+
+.skillClasses {
+    position: absolute;
+    bottom: 1em;
+    font-size: x-small;
+    color: gray;
+    margin: 0 0.5em;
+}

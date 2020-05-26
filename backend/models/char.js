@@ -4,22 +4,22 @@ const mongoose = require('mongoose');
 const charSchema = new mongoose.Schema({
   name: {
     type: String,
-    // required: true,
+    required: true,
     trim: true,
     minlength: 3,
     maxlength: 50,
   },
   description: {
     type: String,
-    // required: true,
+    required: true,
   },
   place: {
     type: Number,
-    // required: true,
+    required: true,
   },
   avatar: {
     type: String,
-    // required: true,
+    required: true,
   },
   skills: {
     type: [],

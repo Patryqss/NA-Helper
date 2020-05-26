@@ -1,0 +1,53 @@
+.avatarAndChakra {
+    display: flex;
+    flex-direction: column;
+    max-width: 4em;
+    margin: 5px;
+}
+
+.avatar {
+    max-width: 4em;
+    max-height: 4em;
+}
+
+.chakras {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-family: monospace;
+    font-style: italic;
+    margin-top: 1.5em;
+}
+
+.chakraGroup {
+    display: flex;
+    margin: 2px;
+    align-items: center;
+}
+
+.taijutsu, .bloodline, .ninjutsu, .genjutsu, .random {
+    width: 0.7em;
+    height: 0.7em;
+    border: 1px solid black;
+    margin: 0.1em;
+}
+
+.taijutsu {
+    background-color: rgb(12,221,44);
+}
+
+.bloodline {
+    background-color: rgb(240,0,10);
+}
+
+.ninjutsu {
+    background-color: rgb(0,169,213);
+}
+
+.genjutsu {
+    background-color: rgb(255,255,255);
+}
+
+.random {
+    background-color: rgb(0,0,0);
+}

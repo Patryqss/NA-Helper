@@ -1,0 +1,95 @@
+@import 'buttons.css';
+@import 'avAndChakraDiv.css';
+@import 'skillDescDiv.css';
+
+#root {
+    background-color:rgb(131, 148, 245);
+    position: fixed;
+    margin: 15px;
+    /* min-height: 90%; */
+    height: 600px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.chars {
+    height: 400px;
+    overflow: auto;
+}
+
+.facepic {
+    width: 3.5em;
+    cursor: pointer;
+}
+
+.searchBar {
+    align-self: flex-end;
+    margin-right: 50px;
+    height: 25px;
+}
+
+.bottomThings {
+    display: flex;
+}
+
+.charInfo {
+    width: 90%;
+    /* min-height: 30%;
+    max-height: 32%; */
+    height: 175px;
+    background-color: rgb(51,51,51);
+    overflow: auto;
+}
+
+.charDiv {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 15% 25% 15% 45%;
+}
+
+.skills {
+    margin-left: 1em;
+    display: flex;
+    max-width: 12em;
+    flex-wrap: wrap;
+}
+
+.skillpic {
+    margin-right: 1em;
+    max-width: 4em;
+    max-height: 4em;
+}
+
+.additionalButtons {
+    max-width: 4em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer {
+      text-align: right;
+      color: beige;
+      font-size: small;
+      margin-right: 15px;
+}
+
+@media all and (max-width: 500px) {
+    #root {
+        width: 100%;
+        margin: 0;
+    }
+
+    .chars {
+        height: 70rem;
+    }
+
+    .bottomThings {
+        height: 45rem;
+    }
+}

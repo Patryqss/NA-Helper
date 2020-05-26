@@ -4,7 +4,7 @@ const router = express.Router();
 //get all chars
 router.get('/', async (req, res) => {
   const Char = res.locals.models.char;
-  const char = await Char.find();
+  const char = await Char.find().sort('place');
   res.send(char);
 });
 
