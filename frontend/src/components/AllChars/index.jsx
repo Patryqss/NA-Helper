@@ -6,17 +6,19 @@ import Menu from '../Menu';
 import CharFilter from '../Filters/charFilter';
 import SkillFilter from '../Filters/skillFilter';
 import SearchBar from '../SearchBar/SearchBar';
+import DamageCalc from '../DamageCalc';
 
 
 class AllChars extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { chars: [], filteredChars: [], id:"5ec26309e880d824b803c6b3", active: 'charInfo' };
+        this.state = { chars: [], filteredChars: [], id:"5ec26309e880d824b803c6b3", active: 'charInfo', calc: false };
         this.handleAvatarClick = this.handleAvatarClick.bind(this);
         this.getInfoFromMenu = this.getInfoFromMenu.bind(this);
         this.getSkillFilters = this.getSkillFilters.bind(this);
         this.getCharFilters = this.getCharFilters.bind(this);
         this.getSearchResult = this.getSearchResult.bind(this);
+        this.changeCalcVisibility = this.changeCalcVisibility.bind(this);
     }
 
     getData = async () => {
@@ -70,6 +72,11 @@ class AllChars extends React.Component {
         this.setState({ filteredChars: filterChars })
     }
 
+    changeCalcVisibility() {
+        let actualCalc = this.state.calc;
+        this.setState({ calc: !actualCalc });
+    }
+
     render() {
         return (
             <>
@@ -83,7 +90,7 @@ class AllChars extends React.Component {
                 </div>
                 <div className="bottomThings">
                     <div className="buttons">
-                        <Menu callbackFromParent={this.getInfoFromMenu} />
+                        <Menu callbackFromParent={this.getInfoFromMenu} changeCalcVisibility={this.changeCalcVisibility}/>
                     </div>
                     <div className="charInfo">
                         {this.state.active === 'charInfo' && <CharInfo id={this.state.id} />}
@@ -91,6 +98,7 @@ class AllChars extends React.Component {
                         {this.state.active === 'skillFilters' && <SkillFilter callbackFromParent={this.getSkillFilters} />}
                     </div>
                 </div>
+                {this.state.calc && <DamageCalc/>}
                 <div className="footer">
                         Made by Neji1113 / Patryqss
                 </div>

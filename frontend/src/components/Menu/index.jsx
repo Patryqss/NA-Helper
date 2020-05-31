@@ -5,10 +5,14 @@ class Menu extends React.Component {
     constructor(props) {
         super(props);
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleCalcClick = this.handleCalcClick.bind(this);
     }
 
     handleButtonClick(e) {
         this.props.callbackFromParent(e.target.id);
+    }
+    handleCalcClick() {
+        this.props.changeCalcVisibility();
     }
 
     render() {
@@ -19,6 +23,9 @@ class Menu extends React.Component {
                 </div>
                 <div onClick={this.handleButtonClick} className="button" id="skillFilters">
                     Skill Filters
+                </div>
+                <div onClick={this.handleCalcClick} className="button">
+                    Damage Calc
                 </div>
                 <div className="button" id="game">
                     <a href='https://naruto-arena.net/' target='_blank'>Game</a>

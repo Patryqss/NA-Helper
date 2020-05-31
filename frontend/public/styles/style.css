@@ -1,12 +1,12 @@
 @import 'buttons.css';
 @import 'avAndChakraDiv.css';
 @import 'skillDescDiv.css';
+@import 'damageCalc.css';
 
 #root {
     background-color:rgb(131, 148, 245);
     position: fixed;
     margin: 15px;
-    /* min-height: 90%; */
     height: 600px;
     width: 1000px;
     display: flex;
@@ -33,14 +33,18 @@ a {
     height: 25px;
 }
 
+.searchBar input {
+    font-weight: 550;
+    font-size: 7.5;
+    color: rgb(154, 1, 1);
+}
+
 .bottomThings {
     display: flex;
 }
 
 .charInfo {
     width: 90%;
-    /* min-height: 30%;
-    max-height: 32%; */
     height: 175px;
     background-color: rgb(51,51,51);
     overflow: auto;
@@ -91,5 +95,11 @@ a {
 
     .bottomThings {
         height: 45rem;
+    }
+}
+
+@media all and (min-width: 800px) {
+    .charInfo {
+        height: 100%;
     }
 }
