@@ -13,9 +13,7 @@ class SearchBar extends React.Component {
   }
 
   onFormChange(e) {
-    this.setState({ term: e.target.value });
-    this.state.term = e.target.value;
-    this.props.callbackFromParent(this.state.term);
+    this.setState({ term: e.target.value }, () => this.props.callbackFromParent(this.state.term));
   }
 
   render() {
