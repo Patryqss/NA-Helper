@@ -31,13 +31,19 @@ class charFilter extends React.Component {
     ];
   }
 
+  componentDidUpdate(p, prevState) {
+    const { includeFilters, excludeFilters } = this.state;
+    if (prevState.includeFilters !== includeFilters || prevState.excludeFilters !== excludeFilters)
+      this.props.callbackFromParent(includeFilters, excludeFilters)
+  }
+
   handleButtonClick(e) {
     const { includeFilters, excludeFilters } = this.state;
     e.persist()
     if (e.target.className === 'filterr inactiveButton') {
       e.target.className = 'filterr activeButton';
       this.setState({
-        includeFilters: [...includeFilters, e.target.id],
+        includeFilters: [...includeFilters, e.target.id]
       })
     } else if (e.target.className === 'filterr activeButton') {
       e.target.className = 'filterr activeRedButton';
@@ -51,7 +57,6 @@ class charFilter extends React.Component {
         excludeFilters: excludeFilters.filter(s => s !== e.target.id)
       })
     }
-    this.props.callbackFromParent(includeFilters, excludeFilters);
   }
 
   render() {

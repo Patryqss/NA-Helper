@@ -46,6 +46,12 @@ class skillFilter extends React.Component {
     ];
   }
 
+  componentDidUpdate(p, prevState) {
+    const { includeAbilities, excludeAbilities } = this.state;
+    if (prevState.includeAbilities !== includeAbilities || prevState.excludeAbilities !== excludeAbilities)
+      this.props.callbackFromParent(includeAbilities, excludeAbilities);
+  }
+
   handleButtonClick(e) {
     const { includeAbilities, excludeAbilities } = this.state;
     e.persist()
@@ -66,7 +72,6 @@ class skillFilter extends React.Component {
         excludeAbilities: excludeAbilities.filter(s => s !== e.target.id)
       }))
     }
-    this.props.callbackFromParent(includeAbilities, excludeAbilities);
   }
 
   render() {
