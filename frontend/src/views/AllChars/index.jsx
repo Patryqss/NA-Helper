@@ -1,10 +1,8 @@
 import React from 'react';
-import Characters from '../../components/AllChars'
+import Characters from '../../components/AllChars';
 
 const AllChars = () => {
-  return (
-    <Characters/>
-  );
+  return <Characters />;
 };
 
 export default AllChars;

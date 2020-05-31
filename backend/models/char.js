@@ -40,7 +40,7 @@ const charSchema = new mongoose.Schema({
   mission: {
     type: [],
     required: true,
-  }
+  },
 });
 
 const Char = mongoose.model('Char', charSchema);

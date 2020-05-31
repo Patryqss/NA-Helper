@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Result = ({ leftHp, leftDD, clear }) => (
   <div className="result">

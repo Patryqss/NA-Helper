@@ -4,102 +4,102 @@
 @import 'damageCalc.css';
 
 #root {
-    background-color:rgb(131, 148, 245);
-    position: fixed;
-    margin: 15px;
-    height: 600px;
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
+  background-color: rgb(131, 148, 245);
+  position: fixed;
+  margin: 15px;
+  height: 600px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .chars {
-    height: 400px;
-    overflow: auto;
+  height: 400px;
+  overflow: auto;
 }
 
 .facepic {
-    width: 3.5em;
-    cursor: pointer;
+  width: 3.5em;
+  cursor: pointer;
 }
 
 .searchBar {
-    align-self: flex-end;
-    margin-right: 50px;
-    height: 25px;
+  align-self: flex-end;
+  margin-right: 50px;
+  height: 25px;
 }
 
 .searchBar input {
-    font-weight: 550;
-    font-size: 7.5;
-    color: rgb(154, 1, 1);
+  font-weight: 550;
+  font-size: 7.5;
+  color: rgb(154, 1, 1);
 }
 
 .bottomThings {
-    display: flex;
+  display: flex;
 }
 
 .charInfo {
-    width: 90%;
-    height: 175px;
-    background-color: rgb(51,51,51);
-    overflow: auto;
+  width: 90%;
+  height: 175px;
+  background-color: rgb(51, 51, 51);
+  overflow: auto;
 }
 
 .charDiv {
-    display: grid;
-    padding: 10px;
-    grid-template-columns: 15% 25% 15% 45%;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 15% 25% 15% 45%;
 }
 
 .skills {
-    margin-left: 1em;
-    display: flex;
-    max-width: 12em;
-    flex-wrap: wrap;
+  margin-left: 1em;
+  display: flex;
+  max-width: 12em;
+  flex-wrap: wrap;
 }
 
 .skillpic {
-    margin-right: 1em;
-    max-width: 4em;
-    max-height: 4em;
+  margin-right: 1em;
+  max-width: 4em;
+  max-height: 4em;
 }
 
 .additionalButtons {
-    max-width: 4em;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  max-width: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer {
-      text-align: right;
-      color: beige;
-      font-size: small;
-      margin-right: 15px;
+  text-align: right;
+  color: beige;
+  font-size: small;
+  margin-right: 15px;
 }
 
 @media all and (max-width: 500px) {
-    #root {
-        width: 100%;
-        margin: 0;
-    }
+  #root {
+    width: 100%;
+    margin: 0;
+  }
 
-    .chars {
-        height: 70rem;
-    }
+  .chars {
+    height: 70rem;
+  }
 
-    .bottomThings {
-        height: 45rem;
-    }
+  .bottomThings {
+    height: 45rem;
+  }
 }
-
+/* 
 @media all and (min-width: 800px) {
-    .charInfo {
-        height: 100%;
-    }
-}
+  .charInfo {
+    height: 100%;
+  }
+} */

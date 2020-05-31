@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const DamageEffects = ({ handleChange, dd, dr, di, dr2 }) => (
   <div className="damage-effect">

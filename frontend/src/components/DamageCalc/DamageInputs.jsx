@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const DamageInputs = ({ handleDamageChange, handleTypeChange, input }) => (
   <div className="damage-dealing">
@@ -7,13 +7,7 @@ const DamageInputs = ({ handleDamageChange, handleTypeChange, input }) => (
     </div>
     <div className="damage-body">
       <div className="damage1">
-        <input
-          key="0"
-          id={0}
-          type="number"
-          onChange={handleDamageChange}
-          value={input[0].damage}
-        />
+        <input key="0" id={0} type="number" onChange={handleDamageChange} value={input[0].damage} />
         <div>
           <select id={0} value={input[0].type} onChange={handleTypeChange}>
             <option value="normal">Normal</option>
@@ -23,13 +17,7 @@ const DamageInputs = ({ handleDamageChange, handleTypeChange, input }) => (
         </div>
       </div>
       <div className="damage2">
-        <input
-          key="1"
-          id={1}
-          type="number"
-          onChange={handleDamageChange}
-          value={input[1].damage}
-        />
+        <input key="1" id={1} type="number" onChange={handleDamageChange} value={input[1].damage} />
         <div>
           <select id={1} value={input[1].type} onChange={handleTypeChange}>
             <option value="normal">Normal</option>
@@ -39,13 +27,7 @@ const DamageInputs = ({ handleDamageChange, handleTypeChange, input }) => (
         </div>
       </div>
       <div className="damage3">
-        <input
-          key="2"
-          id={2}
-          type="number"
-          onChange={handleDamageChange}
-          value={input[2].damage}
-        />
+        <input key="2" id={2} type="number" onChange={handleDamageChange} value={input[2].damage} />
         <div>
           <select id={2} value={input[2].type} onChange={handleTypeChange}>
             <option value="normal">Normal</option>

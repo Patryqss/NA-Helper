@@ -4,12 +4,7 @@ import ReactDOM from 'react-dom';
 import AllChars from './components/AllChars';
 
 const App = () => {
-  return (
-    <AllChars/>
-  );
+  return <AllChars />;
 };
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

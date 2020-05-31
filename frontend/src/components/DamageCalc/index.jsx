@@ -1,8 +1,8 @@
-import React from "react";
-import Health from "./Health";
-import DamageEffects from "./DamageEffects";
-import DamageInputs from "./DamageInputs";
-import Result from "./Result";
+import React from 'react';
+import Health from './Health';
+import DamageEffects from './DamageEffects';
+import DamageInputs from './DamageInputs';
+import Result from './Result';
 
 export default class App extends React.Component {
   state = {
@@ -11,13 +11,9 @@ export default class App extends React.Component {
     dr: 0, //damage reduction percentage
     dr2: 0, //damage reduction points
     di: 0, //damage increase
-    input: [
-      { damage: 0, type: "normal" },
-      { damage: 0, type: "normal" },
-      { damage: 0, type: "normal" }
-    ],
+    input: [{ damage: 0, type: 'normal' }, { damage: 0, type: 'normal' }, { damage: 0, type: 'normal' }],
     leftHp: 100,
-    leftDD: 0
+    leftDD: 0,
   };
 
   componentDidMount() {
@@ -49,11 +45,11 @@ export default class App extends React.Component {
         let leftHp = previous.leftHp;
         let leftDD = previous.leftDD;
         let leftDR2 = previous.leftDR2;
-        if (current.type === "affliction") {
+        if (current.type === 'affliction') {
           leftHp = leftHp - damage;
           return { leftHp, leftDD, leftDR2 };
         }
-        if (current.type === "piercing") {
+        if (current.type === 'piercing') {
           leftDD = leftDD - damage;
           if (leftDD < 0) {
             let dealtDamage = leftDD * -1;
@@ -75,7 +71,7 @@ export default class App extends React.Component {
         if (leftHp < 0) leftHp = 0;
         return { leftHp, leftDD, leftDR2 };
       },
-      { leftHp: hp, leftDD: dd, leftDR2: dr2 }
+      { leftHp: hp, leftDD: dd, leftDR2: dr2 },
     );
   };
   //handle functions
@@ -86,9 +82,9 @@ export default class App extends React.Component {
       input: Object.assign([], input, {
         [e.target.id]: {
           ...input[e.target.id],
-          damage: Number(e.target.value)
-        }
-      })
+          damage: Number(e.target.value),
+        },
+      }),
     }));
   };
   handleTypeChange = e => {
@@ -97,9 +93,9 @@ export default class App extends React.Component {
       input: Object.assign([], input, {
         [e.target.id]: {
           ...input[e.target.id],
-          type: e.target.value
-        }
-      })
+          type: e.target.value,
+        },
+      }),
     }));
   };
 
@@ -121,11 +117,7 @@ export default class App extends React.Component {
             input={this.state.input}
           />
         </div>
-        <Result
-          leftHp={this.state.leftHp}
-          leftDD={this.state.leftDD}
-          clear={this.clear}
-        />
+        <Result leftHp={this.state.leftHp} leftDD={this.state.leftDD} clear={this.clear} />
       </div>
     );
   }

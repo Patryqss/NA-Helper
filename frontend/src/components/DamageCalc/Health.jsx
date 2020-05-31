@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Health = ({ handleChange, hp }) => (
   <div className="health">
@@ -6,13 +6,7 @@ const Health = ({ handleChange, hp }) => (
       <span>HP </span>
     </div>
     <div className="body">
-      <input
-        type="number"
-        id="hp"
-        onChange={handleChange}
-        value={hp}
-        max={100}
-      />
+      <input type="number" id="hp" onChange={handleChange} value={hp} max={100} />
     </div>
   </div>
 );

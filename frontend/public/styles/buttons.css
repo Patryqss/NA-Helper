@@ -1,138 +1,148 @@
 .buttons {
-    /* min-height: 30%;
+  /* min-height: 30%;
     max-height: 30%; */
-    height: 175px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    max-width: 20%;
-    padding: 5px;
+  height: 175px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 20%;
+  padding: 5px;
 }
 
 .filterr {
-    width: 5em;
-    margin: 0.2em 0.5em;
-    padding: 0.5em;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: small;
-    display: inline-block;
-    cursor: pointer;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
-    
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 5em;
+  margin: 0.2em 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: small;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.filterButtons{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0.5em;
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5em;
 }
 
 .inactiveButton {
-    background-color: whitesmoke;
-    border: 1px solid #bbb;
+  background-color: whitesmoke;
+  border: 1px solid #bbb;
 }
 
 .activeButton {
-    background-color: yellowgreen;
-    border: 1px solid rgb(250, 255, 173);
+  background-color: yellowgreen;
+  border: 1px solid rgb(250, 255, 173);
 }
 
 .activeRedButton {
-    background-color: tomato;
-    border: 1px solid rgb(255, 187, 187);
+  background-color: tomato;
+  border: 1px solid rgb(255, 187, 187);
 }
 
 .button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
-  
+
 .button {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    padding: 0.5em 1em;
-    margin: 0;
-    width: 4em;
-    cursor: pointer;
-    border: 1px solid #bbb;
-    overflow: visible;
-    font: bold 0.6em 'Franklin Gothic Medium';
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    /* white-space: nowrap; */
-    color: #555;
-    
-    background-color: #ddd;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
-    background-image: -webkit-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
-    background-image: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
-    background-image: -ms-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
-    background-image: -o-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
-    background-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
-    
-    -webkit-transition: background-color .2s ease-out;
-    -moz-transition: background-color .2s ease-out;
-    -ms-transition: background-color .2s ease-out;
-    -o-transition: background-color .2s ease-out;
-    transition: background-color .2s ease-out;
-    background-clip: padding-box; /* Fix bleeding */
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
-    text-shadow: 0 1px 0 rgba(255,255,255, .9);
-    
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  padding: 0.5em 1em;
+  margin: 0;
+  width: 4em;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  overflow: visible;
+  font: bold 0.6em 'Franklin Gothic Medium';
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  /* white-space: nowrap; */
+  color: #555;
+
+  background-color: #ddd;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(255, 255, 255, 1)),
+    to(rgba(255, 255, 255, 0))
+  );
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  background-clip: padding-box; /* Fix bleeding */
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-  
+
 .button:hover {
-    background-color: #eee;
-    color: #555;
+  background-color: #eee;
+  color: #555;
 }
-  
+
 .button:active {
-    background: #e9e9e9;
-    position: relative;
-    top: 1px;
-    text-shadow: none;
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+  background: #e9e9e9;
+  position: relative;
+  top: 1px;
+  text-shadow: none;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
 }
-  
-.button[disabled], .button[disabled]:hover, .button[disabled]:active {
-    border-color: #eaeaea;
-    background: #fafafa;
-    cursor: default;
-    position: static;
-    color: #999;
-    /* Usually, !important should be avoided but here it's really needed :) */
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+
+.button[disabled],
+.button[disabled]:hover,
+.button[disabled]:active {
+  border-color: #eaeaea;
+  background: #fafafa;
+  cursor: default;
+  position: static;
+  color: #999;
+  /* Usually, !important should be avoided but here it's really needed :) */
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }

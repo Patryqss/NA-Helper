@@ -4,7 +4,7 @@
   "description": "Useful tool for playing Naruto-Arena",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,json,scss,html}\"",
+    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,json,jsx,css,scss,html}\"",
     "mon": "nodemon -r dotenv/config ./backend/app.js",
     "dev": "concurrently -n react,express -k \"cd frontend && npm run start\" \"npm run mon\"",
     "start": "node -r dotenv/config ./backend/app.js",
@@ -23,7 +23,7 @@
     "eslint": "^6.8.0",
     "file-loader": "^5.1.0",
     "nodemon": "^2.0.2",
-    "prettier": "^1.19.1"
+    "prettier": "1.18.2"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0",

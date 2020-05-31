@@ -33,7 +33,6 @@ const main = async () => {
   const host = process.env.HOST || '127.0.0.1';
   const port = process.env.PORT || 8080;
   const server = app.listen(port, host, () => console.log(`Listening on http://${host}:${port}`));
-  
 };
 
 main();
