@@ -1,205 +1,206 @@
 #Calc {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-align: center;
-  color: rgb(154, 1, 1);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  background-color: rgba(239, 241, 250, 0.986);
-  height: 19vw;
-  padding: 2.5px;
-  min-width: 20vw;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  max-width: 55vw
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: rgb(154, 1, 1);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(239, 241, 250, 0.986);
+    height: 19vw;
+    padding: 1rem;
+    min-width: 20vw;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    max-width: 55vw
 }
 
 #Calc input {
-  position: relative;
-  padding: 1.5px;
-  font-weight: 550;
-  font-size: 7.5;
-  text-align: center;
-  width: 5vw;
-  height: 2vw;
-  font-style: normal;
-  display: inline-flex;
-  color: rgb(154, 1, 1);
+    position: relative;
+    padding: 1.5px;
+    font-weight: 550;
+    font-size: 7.5;
+    text-align: center;
+    width: 3vw;
+    height: 2vw;
+    font-style: normal;
+    display: inline-flex;
+    color: rgb(154, 1, 1);
 }
 
 select {
-  border: none;
-  font-size: 6;
-  width: 4.5vw;
+    border: none;
+    font-size: 6;
+    width: 4.5vw;
 }
 
 .container {
-  display: grid;
-  grid-gap: 1vw;
-  grid-template-columns: auto auto auto;
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: auto auto auto;
 }
 
 .top {
-  display: grid;
-  height: 6vw;
-  grid-gap: 1.5px;
+    display: grid;
+    height: 6vw;
+    grid-gap: 1.5px;
 }
 
 .health {
-  display: grid;
-  grid-template-rows: 2.5vw auto;
-  grid-gap: 1.5vw;
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 2.5vw auto;
+    grid-gap: 1.5vw;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .health .header {
-  grid-row-start: 1;
+    grid-row-start: 1;
 }
 
 .health .body {
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .damage-effect {
-  display: grid;
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .damage-effect .dd {
-  display: grid;
-  grid-template-rows: 2.5vw auto;
-  grid-gap: 1.5vw;
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 2.5vw auto;
+    grid-gap: 1.5vw;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .damage-effect .dd .header {
-  grid-row-start: 1;
+    grid-row-start: 1;
 }
 
 .damage-effect .dd .body {
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .damage-effect .dr {
-  display: grid;
-  grid-template-rows: 2.5vw auto;
-  grid-gap: 1.5vw;
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 2.5vw auto;
+    grid-gap: 1.5vw;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .damage-effect .dr .header {
-  grid-row-start: 1;
+    grid-row-start: 1;
 }
 
 .damage-effect .dr .body {
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .damage-effect .dr2 {
-  display: grid;
-  grid-template-rows: 2.5vw auto;
-  grid-gap: 1.5vw;
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 2.5vw auto;
+    grid-gap: 1.5vw;
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .damage-effect .dr2 .header {
-  grid-row-start: 1;
+    grid-row-start: 1;
 }
 
 .damage-effect .dr2 .body {
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .damage-effect .di {
-  display: grid;
-  grid-template-rows: 2.5vw auto;
-  grid-gap: 1.5vw;
-  grid-column: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 2.5vw auto;
+    grid-gap: 1.5vw;
+    grid-column: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .damage-effect .di .header {
-  grid-row-start: 1;
+    grid-row-start: 1;
 }
 
 .damage-effect .di .body {
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .damage-dealing {
-  display: grid;
-  grid-template-rows: 2.5vw auto;
-  grid-gap: 1.5vw;
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 2.5vw auto;
+    grid-gap: 1.5vw;
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .damage-dealing .header {
-  grid-row-start: 1;
+    grid-row-start: 1;
 }
+
 .damage-body {
-  display: grid;
-  grid-row-start: 2;
+    display: grid;
+    grid-row-start: 2;
 }
 
 .damage-dealing .damage1 {
-  grid-column: 1;
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-column: 1;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .damage-dealing .damage2 {
-  grid-column: 2;
-  grid-row-start: 2;
-  grid-row-end: 8;
-  padding: 2.5px;
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    padding: 2.5px;
 }
 
 .damage-dealing .damage3 {
-  grid-column: 3;
-  grid-row-start: 2;
-  padding: 2.5px;
+    grid-column: 3;
+    grid-row-start: 2;
+    padding: 2.5px;
 }
 
 .result {
-  display: grid;
-  grid-row-start: 2;
+    display: grid;
+    grid-row-start: 2;
 }
 
 .result .remaning-hp {
-  grid-column: 3;
-  grid-row-start: 1;
+    grid-column: 3;
+    grid-row-start: 1;
 }
 
 .result .remaning-dd {
-  grid-column: 4;
-  grid-row-start: 1;
+    grid-column: 4;
+    grid-row-start: 1;
 }
 
 .result .bbutton {
-  display: grid;
-  grid-column: 5;
-  grid-row-start: 1;
-  padding: 10px;
+    display: grid;
+    grid-column: 5;
+    grid-row-start: 1;
+    padding: 1.2rem;
 }
 
 .result button {
-  width: 9vw;
-  height: 2.5vw;
+    width: 4vw;
+    height: 2.5vw;
 }

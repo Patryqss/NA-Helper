@@ -58,7 +58,7 @@ export default class App extends React.Component {
           }
           return { leftHp, leftDD, leftDR2 };
         }
-        leftDR2 = leftDR2 - Math.floor(damage * (1 - dr / 100));
+        leftDR2 = leftDR2 - Math.ceil(damage * (1 - dr / 100));
         if (leftDR2 < 0) {
           let reducedDamage = leftDR2 * -1;
           leftDD = leftDD - reducedDamage;
