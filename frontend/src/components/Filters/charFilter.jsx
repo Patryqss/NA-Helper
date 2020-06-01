@@ -31,26 +31,32 @@ class charFilter extends React.Component {
     ];
   }
 
+  componentDidUpdate(p, prevState) {
+    const { includeFilters, excludeFilters } = this.state;
+    if (prevState.includeFilters !== includeFilters || prevState.excludeFilters !== excludeFilters)
+      this.props.callbackFromParent(includeFilters, excludeFilters)
+  }
+
   handleButtonClick(e) {
-    let includeSkills = this.state.includeFilters;
-    let excludeSkills = this.state.excludeFilters;
+    const { includeFilters, excludeFilters } = this.state;
+    e.persist()
     if (e.target.className === 'filterr inactiveButton') {
-      includeSkills.push(e.target.id);
       e.target.className = 'filterr activeButton';
-      // this.state.includeFilters = includeSkills;
-      this.setState({ includeFilters: [...this.state.includeFilters, e.target.id] })
+      this.setState({
+        includeFilters: [...includeFilters, e.target.id]
+      })
     } else if (e.target.className === 'filterr activeButton') {
-      includeSkills = includeSkills.filter(s => s !== e.target.id);
-      excludeSkills.push(e.target.id);
       e.target.className = 'filterr activeRedButton';
-      this.state.includeFilters = includeSkills;
-      this.state.excludeFilters = excludeSkills;
+      this.setState(({ includeFilters, excludeFilters }) => ({
+        includeFilters: includeFilters.filter(s => s !== e.target.id),
+        excludeFilters: [...excludeFilters, e.target.id]
+      }))
     } else if (e.target.className === 'filterr activeRedButton') {
-      excludeSkills = excludeSkills.filter(s => s !== e.target.id);
       e.target.className = 'filterr inactiveButton';
-      this.state.excludeFilters = excludeSkills;
+      this.setState({
+        excludeFilters: excludeFilters.filter(s => s !== e.target.id)
+      })
     }
-    this.props.callbackFromParent(this.state.includeFilters, this.state.excludeFilters);
   }
 
   render() {

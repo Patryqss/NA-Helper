@@ -46,25 +46,32 @@ class skillFilter extends React.Component {
     ];
   }
 
+  componentDidUpdate(p, prevState) {
+    const { includeAbilities, excludeAbilities } = this.state;
+    if (prevState.includeAbilities !== includeAbilities || prevState.excludeAbilities !== excludeAbilities)
+      this.props.callbackFromParent(includeAbilities, excludeAbilities);
+  }
+
   handleButtonClick(e) {
-    let includeSkills = this.state.includeAbilities;
-    let excludeSkills = this.state.excludeAbilities;
+    const { includeAbilities, excludeAbilities } = this.state;
+    e.persist()
     if (e.target.className === 'filterr inactiveButton') {
-      includeSkills.push(e.target.id);
       e.target.className = 'filterr activeButton';
-      this.state.includeAbilities = includeSkills;
+      this.setState({
+        includeAbilities: [...includeAbilities, e.target.id]
+      })
     } else if (e.target.className === 'filterr activeButton') {
-      includeSkills = includeSkills.filter(s => s !== e.target.id);
-      excludeSkills.push(e.target.id);
       e.target.className = 'filterr activeRedButton';
-      this.state.includeAbilities = includeSkills;
-      this.state.excludeAbilities = excludeSkills;
+      this.setState({
+        includeAbilities: includeAbilities.filter(s => s !== e.target.id),
+        excludeAbilities: [...excludeAbilities, e.target.id]
+      })
     } else if (e.target.className === 'filterr activeRedButton') {
-      excludeSkills = excludeSkills.filter(s => s !== e.target.id);
       e.target.className = 'filterr inactiveButton';
-      this.state.excludeAbilities = excludeSkills;
+      this.setState(({ excludeAbilities }) => ({
+        excludeAbilities: excludeAbilities.filter(s => s !== e.target.id)
+      }))
     }
-    this.props.callbackFromParent(this.state.includeAbilities, this.state.excludeAbilities);
   }
 
   render() {
