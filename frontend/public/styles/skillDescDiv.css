@@ -45,3 +45,11 @@
   color: gray;
   margin: 0 0.5em;
 }
+
+@media all and (max-width: 500px) {
+  .skillCooldown, .skillCost, .skillClasses {
+    position: initial;
+    margin: 1vh;
+    text-align: left;
+  }
+}

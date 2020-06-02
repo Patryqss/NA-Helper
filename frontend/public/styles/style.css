@@ -89,6 +89,10 @@ a {
     margin: 0;
   }
 
+  .charDiv {
+    grid-template-columns: 15% 20% 65%;
+  }
+
   .chars {
     height: 70rem;
   }
@@ -96,10 +100,19 @@ a {
   .bottomThings {
     height: 45rem;
   }
-}
-/* 
-@media all and (min-width: 800px) {
-  .charInfo {
-    height: 100%;
+
+  .skills {
+    margin-left: 2vh;
   }
-} */
+
+  .skillpic {
+    width: 6vh;
+    height: 6vh;
+  }
+
+  .additionalButtons {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: baseline;
+  }
+}

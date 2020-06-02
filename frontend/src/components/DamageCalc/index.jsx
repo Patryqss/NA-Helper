@@ -102,7 +102,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="Calc container" id="Calc">
-        <div class="top">
+        <div className="top">
           <Health handleChange={this.handleChange} hp={this.state.hp} />
           <DamageEffects
             handleChange={this.handleChange}
