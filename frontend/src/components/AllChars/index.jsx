@@ -11,7 +11,14 @@ import DamageCalc from '../DamageCalc';
 class AllChars extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { chars: [], filteredChars: [], id: '5ec26309e880d824b803c6b3', active: 'charInfo', calc: false };
+    this.state = {
+      chars: [],
+      filteredChars: [],
+      id: '5ec26309e880d824b803c6b3',
+      active: 'charInfo',
+      calc: false,
+      rmdKey: "0"
+    };
     this.handleAvatarClick = this.handleAvatarClick.bind(this);
     this.getInfoFromMenu = this.getInfoFromMenu.bind(this);
     this.getSkillFilters = this.getSkillFilters.bind(this);
@@ -35,7 +42,11 @@ class AllChars extends React.Component {
   }
 
   getInfoFromMenu(whatIsActive) {
-    this.setState({ active: whatIsActive, filteredChars: this.state.chars });
+    this.setState({
+      active: whatIsActive,
+      filteredChars: this.state.chars,
+      rmdKey: Math.floor(Math.random() * 99999).toString()
+    });
   }
 
   getSearchResult(term) {
@@ -93,8 +104,8 @@ class AllChars extends React.Component {
           </div>
           <div className="charInfo">
             {this.state.active === 'charInfo' && <CharInfo id={this.state.id} />}
-            {this.state.active === 'filters' && <CharFilter callbackFromParent={this.getCharFilters} />}
-            {this.state.active === 'skillFilters' && <SkillFilter callbackFromParent={this.getSkillFilters} />}
+            {this.state.active === 'filters' && <CharFilter key={this.state.rmdKey} callbackFromParent={this.getCharFilters} />}
+            {this.state.active === 'skillFilters' && <SkillFilter key={this.state.rmdKey} callbackFromParent={this.getSkillFilters} />}
           </div>
         </div>
         {this.state.calc && <DamageCalc />}
