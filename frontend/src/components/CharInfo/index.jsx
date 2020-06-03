@@ -79,7 +79,7 @@ class CharInfo extends React.Component {
             let arr = [...p.arr]
             let el = {...p.el, [c.skillReplace - 1]: c};
             arr[p.index] = el
-            return {el, arr, prevEl: c}
+            return {el, arr, prevEl: c, index: p.index}
       }
       let el = {[p.prevEl.skillReplace - 1]: c}
       return {el, arr: [...p.arr, [el]], prevEl: c, index: p.index + 1}
