@@ -28,7 +28,7 @@ class AllChars extends React.Component {
   }
 
   getData = async () => {
-    const cha = await fetch('/api/chars', setHeaders()).then(response => response.json());
+    const cha = await fetch('https://cors-anywhere.herokuapp.com/https://na-helper.herokuapp.com/api/chars', setHeaders()).then(response => response.json());
 
     this.setState({ chars: cha, filteredChars: cha });
   };

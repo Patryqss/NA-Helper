@@ -82,7 +82,7 @@ class CharInfo extends React.Component {
             return {el, arr, prevEl: c, index: p.index}
       }
       let el = {[p.prevEl.skillReplace - 1]: c}
-      return {el, arr: [...p.arr, [el]], prevEl: c, index: p.index + 1}
+      return {el, arr: [...p.arr, el], prevEl: c, index: p.index + 1}
     }, {el: {}, arr: [], prevEl: {}, index: 0})
     //normalize the skill array
     const normSkills = {...skills};
