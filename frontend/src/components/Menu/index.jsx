@@ -27,12 +27,12 @@ class Menu extends React.Component {
           Damage Calc
         </div>
         <div className="button" id="game">
-          <a href="https://naruto-arena.net/" target="_blank">
+          <a href="https://naruto-arena.net/" rel="noopener noreferrer" target="_blank">
             Game
           </a>
         </div>
         <div className="button" id="boards">
-          <a href="https://boards.naruto-arena.net/index.php" target="_blank">
+          <a href="https://boards.naruto-arena.net/index.php" rel="noopener noreferrer" target="_blank">
             Boards
           </a>
         </div>

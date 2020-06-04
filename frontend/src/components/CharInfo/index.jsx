@@ -10,6 +10,8 @@ class CharInfo extends React.Component {
       char: {},
       name: 'Uzumaki Naruto',
       clas: '',
+      skillPage:0,
+      originalSkill: {},
       cst: [],
       coold: '',
       alter: false,
@@ -26,7 +28,7 @@ class CharInfo extends React.Component {
   getData = async () => {
     const cha = await fetch(`/api/chars/${this.props.id}`, setHeaders()).then(response => response.json());
 
-    this.setState({ char: cha });
+    this.setState({ char: cha, originalSkill: cha.skills });
     if (this.state.char.alternateSkills.length > 0) this.setState({ alter: true });
     else this.setState({ alter: false });
     if (this.state.char.mission.length > 0) this.setState({ mission: true });
@@ -69,17 +71,28 @@ class CharInfo extends React.Component {
   }
 
   handleAlternate() {
-    let alter = this.state.char.alternateSkills;
-    let currentChar = this.state.char;
-    let whatChanged = 5;
-    for (let i = 0; i < alter.length; i++) {
-      let numOfSkillReplaced = alter[i].skillReplace - 1;
-      if (whatChanged !== numOfSkillReplaced && currentChar.skills[numOfSkillReplaced] !== alter[i]) {
-        whatChanged = numOfSkillReplaced;
-        currentChar.skills[numOfSkillReplaced] = alter[i];
-        this.setState({ char: currentChar });
+    const {skillPage, char, originalSkill} = this.state
+    const { alternateSkills, skills } = char;
+    // Order skillsets by page and normalize every element by skillReplace - 1
+    const {arr} = alternateSkills.reduce((p, c, i) =>{
+      if (!Object.keys(p.el).includes((c.skillReplace - 1).toString())) {
+          let arr = [...p.arr]
+            let el = {...p.el, [c.skillReplace - 1]: c};
+            arr[p.index] = el
+            return {el, arr, prevEl: c, index: p.index}
       }
-    }
+      let el = {[c.skillReplace - 1]: c}
+      return {el, arr: [...p.arr, el], prevEl: c, index: p.index + 1}
+    }, {el: {}, arr: [], prevEl: {}, index: 0})
+    //normalize the skill array
+    const normSkills = {...skills};
+    const skillSets = [...arr, originalSkill]; 
+    const currentChar = {
+      ...this.state.char,
+      skills: Object.values({...normSkills, ...skillSets[skillPage]}),
+      skillPage: skillPage
+    };
+    this.setState({ char: currentChar, skillPage:  (skillPage + 1) % skillSets.length });
   }
 
   handleMission() {

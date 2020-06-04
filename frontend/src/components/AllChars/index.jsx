@@ -50,9 +50,10 @@ class AllChars extends React.Component {
   }
 
   getSearchResult(term) {
-    const filterChars = [];
-    this.state.chars.filter(char => {
-      if (char.name.toLowerCase().includes(term.toLowerCase())) filterChars.push(char);
+     const filterChars = this.state.chars.filter(char => {
+      if (char.name.toLowerCase().includes(term.toLowerCase())) 
+        return true;
+      return false;
     });
     this.setState({ filteredChars: filterChars });
   }

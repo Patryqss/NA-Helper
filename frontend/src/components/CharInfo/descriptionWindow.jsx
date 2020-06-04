@@ -5,18 +5,18 @@ export default function descriptionWindow(props) {
     <div className="skillDescription">
       <div className="skilOrCharName">{props.name}</div>
       <div className="skillOrCharDesc">{props.desc}</div>
-      <div className="skillCooldown">{props.cooldown != 'None' && 'Cooldown: ' + props.cooldown}</div>
+      <div className="skillCooldown">{props.cooldown !== 'None' && 'Cooldown: ' + props.cooldown}</div>
       <div className="skillCost">
         {props.cost !== ' ' && 'Cost:  '}
         {props.cost !== ' ' &&
           props.cost.map(
-            x =>
-              (x == 'tai' && <div className="taijutsu"></div>) ||
-              (x == 'blood' && <div className="bloodline"></div>) ||
-              (x == 'nin' && <div className="ninjutsu"></div>) ||
-              (x == 'gen' && <div className="genjutsu"></div>) ||
-              (x == 'random' && <div className="random"></div>) ||
-              (x == 'None' && <div> None</div>),
+            (x, i) =>
+              (x === 'tai' && <div key={x+i} className="taijutsu"></div>) ||
+              (x === 'blood' && <div key={x+i} className="bloodline"></div>) ||
+              (x === 'nin' && <div key={x+i} className="ninjutsu"></div>) ||
+              (x === 'gen' && <div key={x+i} className="genjutsu"></div>) ||
+              (x === 'random' && <div ken={x+i} className="random"></div>) ||
+              (x === 'None' && <div key={x+i}> None</div>),
           )}
       </div>
       <div className="skillClasses">
