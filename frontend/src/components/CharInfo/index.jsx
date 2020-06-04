@@ -75,13 +75,13 @@ class CharInfo extends React.Component {
     const { alternateSkills, skills } = char;
     // Order skillsets by page and normalize every element by skillReplace - 1
     const {arr} = alternateSkills.reduce((p, c, i) =>{
-      if (p.prevEl?.skillReplace !== c.skillReplace) {
-            let arr = [...p.arr]
+      if (!Object.keys(p.el).includes((c.skillReplace - 1).toString())) {
+          let arr = [...p.arr]
             let el = {...p.el, [c.skillReplace - 1]: c};
             arr[p.index] = el
             return {el, arr, prevEl: c, index: p.index}
       }
-      let el = {[p.prevEl.skillReplace - 1]: c}
+      let el = {[c.skillReplace - 1]: c}
       return {el, arr: [...p.arr, el], prevEl: c, index: p.index + 1}
     }, {el: {}, arr: [], prevEl: {}, index: 0})
     //normalize the skill array
