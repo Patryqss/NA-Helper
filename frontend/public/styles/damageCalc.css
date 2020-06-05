@@ -204,3 +204,87 @@ select {
     width: 4vw;
     height: 2.5vw;
 }
+
+@media all and (max-width: 500px) {
+    #Calc {
+        height: 77vw;
+        min-width: 84vw;
+        max-width: 88vw;
+        padding: 0.8rem;
+    }
+    .container {
+        padding: 1vw
+    }
+    .health .body {
+        grid-row-start: 2;
+        padding: 4vw;
+    }
+    .damage-effect .dd .body {
+        min-height: 15vw;
+    }
+    .damage-effect .dd .body #dd {
+        top: 10vw
+    }
+    .damage-effect .di .body #di {
+        top: 10vw
+    }
+    .damage-effect .dr .body #dr {
+        top: 10vw
+    }
+    .damage-effect .dr2 .body #dr2 {
+        top: 10vw;
+    }
+    #Calc input {
+        width: 10vw;
+        height: 3vw;
+        top: 0px;
+        left: 0px;
+    }
+    .top {
+        height: 10vw;
+    }
+    .health {
+        grid-gap: 0.8vw;
+    }
+    .damage-effect {
+        grid-column: 1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .damage-dealing {
+        grid-column: 1;
+        grid-row-start: 8;
+        grid-row-end: 9;
+    }
+    .damage-dealing .damage1 {
+        padding: 3vw;
+    }
+    .damage-dealing .damage2 {
+        padding: 3vw;
+    }
+    .damage-dealing .damage3 {
+        padding: 3vw;
+    }
+    .result .remaning-hp {
+        grid-column: 1;
+        grid-row-start: 10;
+        padding: 2vw;
+    }
+    .result .remaning-dd {
+        grid-column: 2;
+        grid-row-start: 10;
+        padding: 2vw;
+    }
+    .result .bbutton {
+        grid-column: 3;
+        grid-row-start: 10;
+        padding: 1rem
+    }
+    .result button {
+        width: 14vw;
+        height: 7vw;
+    }
+    select {
+        width: 17vw;
+    }
+}
