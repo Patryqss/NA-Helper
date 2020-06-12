@@ -25,16 +25,54 @@ class AllChars extends React.Component {
     this.getCharFilters = this.getCharFilters.bind(this);
     this.getSearchResult = this.getSearchResult.bind(this);
     this.changeCalcVisibility = this.changeCalcVisibility.bind(this);
+    this.addClassesToFiletrs = this.addClassesToFiletrs.bind(this);
+    this.addClassesToFilters2 = this.addClassesToFilters2.bind(this);
+    this.getThroughSkills = this.getThroughSkills.bind(this);
   }
 
   getData = async () => {
     const cha = await fetch('/api/chars', setHeaders()).then(response => response.json());
 
+    this.addClassesToFiletrs(cha);
     this.setState({ chars: cha, filteredChars: cha });
   };
 
   componentDidMount() {
     this.getData();
+  }
+
+  addClassesToFiletrs(cha) {
+    let classes;
+    cha.map(x => (
+      classes = this.getThroughSkills(x),
+      this.addClassesToFilters2(x, classes)
+    ))
+  }
+
+  getThroughSkills(char) {
+    let gottenClasses = [];
+    for (let i = 0; i < 4; i++) {
+      let skillClasses = char.skills[i].skillClasses.split(", ");
+      for (let i = 0; i < skillClasses.length; i++) {
+        gottenClasses.push(skillClasses[i]);
+      }
+    }
+    if (char.alternateSkills.length > 0) {
+      for (let i = 0; i < char.alternateSkills.length; i++) {
+        let skillClasses = char.alternateSkills[i].skillClasses.split(", ");
+        for (let i = 0; i < skillClasses.length; i++) {
+          gottenClasses.push(skillClasses[i]);
+        }
+      }
+    }
+    let unique = [...new Set(gottenClasses)];
+    return unique
+  }
+
+  addClassesToFilters2(x, classes) {
+    for (let i = 0; i < classes.length; i++) {
+      x.skillFilter.push(classes[i]);
+    }
   }
 
   handleAvatarClick(e) {

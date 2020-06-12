@@ -6,6 +6,7 @@ class skillFilter extends React.Component {
     this.state = { includeAbilities: [], excludeAbilities: [] };
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.filters = [
+      'Action',
       'Additional Damage',
       'Affects Chakra Cost',
       'Affects Cooldown',
@@ -17,6 +18,8 @@ class skillFilter extends React.Component {
       'Bloodline',
       'Cannot be countered',
       'Cannot be killed',
+      'Chakra',
+      'Control',
       'Counter',
       'Damage over Time',
       'Damage Reduction',
@@ -30,10 +33,14 @@ class skillFilter extends React.Component {
       'Increase Damage',
       'Insta-kill',
       'Invisible',
+      'Melee', 
+      'Mental',
       'Ninjutsu',
       'None',
+      'Physical',
       'Piercing',
       'Random',
+      'Ranged',
       'Reduce Dealt Damage',
       'Reflect',
       'Remove Chakra',
@@ -43,6 +50,7 @@ class skillFilter extends React.Component {
       'Taijutsu',
       'Through Invulnerable',
       'Unable to Reduce',
+      'Unique',
     ];
   }
 
