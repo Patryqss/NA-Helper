@@ -32,7 +32,6 @@ class AllChars extends React.Component {
   getData = async () => {
     const api = process.env.REACT_APP_API;
     const key = process.env.REACT_APP_SECRET_KEY;
-    console.log(key)
     let req = new XMLHttpRequest();
 
     req.onreadystatechange = () => {
