@@ -1,5 +1,4 @@
 import React from 'react';
-import setHeaders from '../../utils/setHeaders';
 
 import CharInfo from '../CharInfo';
 import Menu from '../Menu';
@@ -14,7 +13,7 @@ class AllChars extends React.Component {
     this.state = {
       chars: [],
       filteredChars: [],
-      id: '5ec26309e880d824b803c6b3',
+      place: 1,
       active: 'charInfo',
       calc: false,
       rmdKey: "0"
@@ -31,14 +30,32 @@ class AllChars extends React.Component {
   }
 
   getData = async () => {
-    const cha = await fetch('/api/chars', setHeaders()).then(response => response.json());
+    const api = process.env.REACT_APP_API;
+    const key = process.env.REACT_APP_SECRET_KEY;
+    console.log(key)
+    let req = new XMLHttpRequest();
 
-    this.addClassesToFiletrs(cha);
-    this.setState({ chars: cha, filteredChars: cha });
+    req.onreadystatechange = () => {
+      if (req.readyState == XMLHttpRequest.DONE) {
+        this.assignChars(JSON.parse(req.responseText));
+      }
+    };
+
+    req.open("GET", api, true);
+    req.setRequestHeader("secret-key", '$2b$10$pYfzP105' + key);
+    req.send();
   };
 
   componentDidMount() {
     this.getData();
+  }
+
+  assignChars = async (chars) => {
+    const cha = await Object.values(chars);
+    cha.sort((a,b) => (a.place > b.place) ? 1 : ((b.place > a.place) ? -1 : 0));
+
+    this.addClassesToFiletrs(cha);
+    this.setState({ chars: cha, filteredChars: cha });
   }
 
   addClassesToFiletrs(cha) {
@@ -76,7 +93,7 @@ class AllChars extends React.Component {
   }
 
   handleAvatarClick(e) {
-    this.setState({ id: e.target.id, active: 'charInfo' });
+    this.setState({ place: e.target.id, active: 'charInfo' });
   }
 
   getInfoFromMenu(whatIsActive) {
@@ -89,7 +106,7 @@ class AllChars extends React.Component {
 
   getSearchResult(term) {
      const filterChars = this.state.chars.filter(char => {
-      if (char.name.toLowerCase().includes(term.toLowerCase())) 
+      if (char.name.toLowerCase().includes(term.toLowerCase()))
         return true;
       return false;
     });
@@ -126,10 +143,10 @@ class AllChars extends React.Component {
           {this.state.filteredChars.map(x => (
             <img
               onClick={this.handleAvatarClick}
-              key={x._id}
+              key={`${x.place}`}
               alt={x.name}
               src={x.avatar}
-              id={x._id}
+              id={`${x.place}`}
               className="facepic"
             />
           ))}
@@ -142,7 +159,7 @@ class AllChars extends React.Component {
             <Menu callbackFromParent={this.getInfoFromMenu} changeCalcVisibility={this.changeCalcVisibility} />
           </div>
           <div className="charInfo">
-            {this.state.active === 'charInfo' && <CharInfo id={this.state.id} />}
+            {(this.state.active === 'charInfo' && this.state.chars.length>0) && <CharInfo id={this.state.place} chars={this.state.chars} />}
             {this.state.active === 'filters' && <CharFilter key={this.state.rmdKey} callbackFromParent={this.getCharFilters} />}
             {this.state.active === 'skillFilters' && <SkillFilter key={this.state.rmdKey} callbackFromParent={this.getSkillFilters} />}
           </div>

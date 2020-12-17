@@ -6,8 +6,7 @@
 #root {
   background-color: rgb(131, 148, 245);
   position: fixed;
-  margin: 15px;
-  height: 600px;
+  height: calc(100vh - 15px);
   width: 1000px;
   display: flex;
   flex-direction: column;
@@ -18,8 +17,8 @@ a {
 }
 
 .chars {
-  height: 400px;
   overflow: auto;
+  height: inherit;
 }
 
 .facepic {
@@ -83,31 +82,37 @@ a {
   margin-right: 15px;
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 1000px) {
   #root {
-    width: 100%;
+    width: calc(100vw - 15px);
     margin: 0;
+  }
+
+  .facepic {
+    width: 13vw;
+    max-width: 50px;
+  }
+
+  .charInfo {
+    height: 175px;
   }
 
   .charDiv {
     grid-template-columns: 15% 20% 65%;
   }
 
-  .chars {
-    height: 70rem;
-  }
-
   .bottomThings {
-    height: 45rem;
+    max-height: 50vh;
   }
 
   .skills {
-    margin-left: 2vh;
+    margin-left: 10px;
+    margin-top: 5px;
   }
 
   .skillpic {
-    width: 6vh;
-    height: 6vh;
+    width: 10vw;
+    height: 10vw;
   }
 
   .additionalButtons {

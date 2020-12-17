@@ -1,5 +1,4 @@
 import React from 'react';
-import setHeaders from '../../utils/setHeaders';
 
 import DescriptionWindow from './descriptionWindow';
 
@@ -26,7 +25,7 @@ class CharInfo extends React.Component {
   }
 
   getData = async () => {
-    const cha = await fetch(`/api/chars/${this.props.id}`, setHeaders()).then(response => response.json());
+    const cha = await this.props.chars.find(char => char.place == this.props.id);
 
     this.setState({ char: cha, originalSkill: cha.skills });
     if (this.state.char.alternateSkills.length > 0) this.setState({ alter: true });
@@ -86,7 +85,7 @@ class CharInfo extends React.Component {
     }, {el: {}, arr: [], prevEl: {}, index: 0})
     //normalize the skill array
     const normSkills = {...skills};
-    const skillSets = [...arr, originalSkill]; 
+    const skillSets = [...arr, originalSkill];
     const currentChar = {
       ...this.state.char,
       skills: Object.values({...normSkills, ...skillSets[skillPage]}),
