@@ -50,7 +50,7 @@ class skillFilter extends React.Component {
       'Taijutsu',
       'Through Invulnerable',
       'Unable to Reduce',
-      'Unique',
+      'Unpierceable'
     ];
   }
 

@@ -2,6 +2,7 @@
 @import 'avAndChakraDiv.css';
 @import 'skillDescDiv.css';
 @import 'damageCalc.css';
+@import 'scrollbar.css';
 
 #root {
   background-color: rgb(131, 148, 245);

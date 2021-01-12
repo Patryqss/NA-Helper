@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function descriptionWindow(props) {
+  const descClass = props.cost === ' ' ? "skillOrCharDesc" : "skillOrCharDesc skillDesc";
   return (
     <div className="skillDescription">
       <div className="skilOrCharName">{props.name}</div>
-      <div className="skillOrCharDesc">{props.desc}</div>
+      <div className={descClass}>{props.desc}</div>
       <div className="skillCooldown">{props.cooldown !== 'None' && 'Cooldown: ' + props.cooldown}</div>
       <div className="skillCost">
         {props.cost !== ' ' && 'Cost:  '}

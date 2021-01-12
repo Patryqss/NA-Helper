@@ -1,0 +1,36 @@
+.chars::-webkit-scrollbar-track {
+  background-color: rgb(131, 148, 245);
+}
+
+.chars::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+.chars::-webkit-scrollbar-thumb {
+  background-color: honeydew;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.skillDesc::-webkit-scrollbar-track {
+  background-color: honeydew;
+}
+
+.skillDesc::-webkit-scrollbar {
+  width: 5px;
+  height: 20px;
+  background-color: #F5F5F5;
+}
+
+.skillDesc::-webkit-scrollbar-thumb {
+  background-color: honeydew;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.chars, .skillDesc {
+  /* For Firefox. duh */
+  scrollbar-color: honeydew rgb(131,148,245);
+  scrollbar-width: thin;
+}

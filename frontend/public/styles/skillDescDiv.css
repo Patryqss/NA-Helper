@@ -20,6 +20,12 @@
   font-size: small;
 }
 
+.skillDesc {
+  max-height: 77px;
+  overflow: auto;
+  padding-right: 5px;
+}
+
 .skillCooldown {
   position: absolute;
   bottom: 2em;
