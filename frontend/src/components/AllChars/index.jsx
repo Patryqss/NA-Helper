@@ -41,7 +41,7 @@ class AllChars extends React.Component {
     };
 
     req.open("GET", api, true);
-    req.setRequestHeader("secret-key", '$2b$10$pYfzP105' + key);
+    req.setRequestHeader("secret-key", "$2b$10$T2V8vYHMstZytH" + key);
     req.send();
   };
 
