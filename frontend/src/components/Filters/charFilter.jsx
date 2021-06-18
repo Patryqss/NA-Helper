@@ -7,6 +7,7 @@ class charFilter extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.filters = [
       'Akatsuki',
+      'Anbu',
       'Cloud',
       'Edo Tensei',
       'Genin',

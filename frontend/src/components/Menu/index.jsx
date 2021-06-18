@@ -32,7 +32,7 @@ class Menu extends React.Component {
           </a>
         </div>
         <div className="button" id="boards">
-          <a href="https://naruto-boards.net/index.php" rel="noopener noreferrer" target="_blank">
+          <a href="https://naruto-boards.net/viewtopic.php?f=41&t=6673" rel="noopener noreferrer" target="_blank">
             Boards
           </a>
         </div>
