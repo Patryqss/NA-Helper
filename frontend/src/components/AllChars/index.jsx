@@ -36,21 +36,31 @@ class AllChars extends React.Component {
 
     req.onreadystatechange = () => {
       if (req.readyState == XMLHttpRequest.DONE) {
+        localStorage.setItem("chars", req.responseText);
+        localStorage.setItem("lastSaved", JSON.stringify(new Date()));
         this.assignChars(JSON.parse(req.responseText));
       }
     };
 
     req.open("GET", api, true);
-    req.setRequestHeader("secret-key", "$2b$10$T2V8vYHMstZytH" + key);
+    req.setRequestHeader("secret-key", "$2b$10$DI1" + key);
     req.send();
   };
 
   componentDidMount() {
-    this.getData();
+    const savedData = JSON.parse(localStorage.getItem("chars"));
+    const lastSaved = new Date(JSON.parse(localStorage.getItem("lastSaved")));
+    const lastUpdate = new Date(process.env.REACT_APP_LAST_UPDATE);
+
+    if((!savedData || !lastUpdate) || lastSaved < lastUpdate) {
+      this.getData();
+    } else {
+      this.assignChars(savedData);
+    }
   }
 
-  assignChars = async (chars) => {
-    const cha = await Object.values(chars);
+  assignChars = chars => {
+    const cha = Object.values(chars);
     cha.sort((a,b) => (a.place > b.place) ? 1 : ((b.place > a.place) ? -1 : 0));
 
     this.addClassesToFiletrs(cha);
