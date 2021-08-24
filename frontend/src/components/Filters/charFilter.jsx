@@ -15,6 +15,7 @@ class charFilter extends React.Component {
       'Jounin',
       'Kage',
       'Konoha',
+      'Medical-Nin',
       'Missing-Nin',
       'Mist',
       'Puppet Master',
