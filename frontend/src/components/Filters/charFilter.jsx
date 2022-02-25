@@ -11,6 +11,7 @@ class charFilter extends React.Component {
       'Cloud',
       'Edo Tensei',
       'Genin',
+      'Hyuuga',
       'Jinchuuriki',
       'Jounin',
       'Kage',
@@ -18,6 +19,7 @@ class charFilter extends React.Component {
       'Medical-Nin',
       'Missing-Nin',
       'Mist',
+      'Ootsutsuki',
       'Puppet Master',
       'Rain',
       'Rock',
@@ -30,6 +32,7 @@ class charFilter extends React.Component {
       'Team 8',
       'Team 9',
       'Team 10',
+      'Uchiha'
     ];
   }
 
