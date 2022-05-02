@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function descriptionWindow(props) {
   const descClass = props.cost === ' ' ? "skillOrCharDesc" : "skillOrCharDesc skillDesc";
+
   return (
     <div className="skillDescription">
       <div className="skilOrCharName">{props.name}</div>
