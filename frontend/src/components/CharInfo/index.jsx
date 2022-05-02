@@ -13,7 +13,7 @@ class CharInfo extends React.Component {
       originalSkill: {},
       cst: [],
       coold: '',
-      alter: false,
+      alter: true,
       mission: false,
       descr:
         'A Genin from Team 7, Naruto is an orphan with the goal to one day become Hokage. Using his signature move, Shadow Clones, Naruto is able to perform powerful moves such as the Uzumaki Naruto Combo and the Rasengan.',
@@ -91,7 +91,7 @@ class CharInfo extends React.Component {
       skills: Object.values({...normSkills, ...skillSets[skillPage]}),
       skillPage: skillPage
     };
-    this.setState({ char: currentChar, skillPage:  (skillPage + 1) % skillSets.length });
+    this.setState({ char: currentChar, skillPage: (skillPage + 1) % skillSets.length });
   }
 
   handleMission() {

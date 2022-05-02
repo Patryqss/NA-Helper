@@ -32,7 +32,8 @@ class charFilter extends React.Component {
       'Team 8',
       'Team 9',
       'Team 10',
-      'Uchiha'
+      'Uchiha',
+      'War Commander'
     ];
   }
 
