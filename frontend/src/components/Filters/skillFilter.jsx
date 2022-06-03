@@ -6,6 +6,7 @@ class skillFilter extends React.Component {
     this.state = { includeAbilities: [], excludeAbilities: [] };
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.filters = [
+      'Achievement',
       'Action',
       'Additional Damage',
       'Affects Chakra Cost',
