@@ -77,10 +77,24 @@ a {
 }
 
 .footer {
+  display: flex;
+  justify-content: space-between;
   text-align: right;
   color: beige;
   font-size: small;
   margin-right: 15px;
+}
+
+.notice {
+  color: red;
+  background-color: white;
+  border: 1px red solid;
+  padding: 1px;
+  margin: 0;
+}
+
+.notice > a {
+  color: red;
 }
 
 @media all and (max-width: 1000px) {

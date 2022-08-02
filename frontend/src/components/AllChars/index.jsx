@@ -6,6 +6,7 @@ import CharFilter from '../Filters/charFilter';
 import SkillFilter from '../Filters/skillFilter';
 import SearchBar from '../SearchBar/SearchBar';
 import DamageCalc from '../DamageCalc';
+import charsData from '../../allChars.json';
 
 class AllChars extends React.Component {
   constructor(props) {
@@ -48,20 +49,12 @@ class AllChars extends React.Component {
   };
 
   componentDidMount() {
-    const savedData = JSON.parse(localStorage.getItem("chars"));
-    const lastSaved = new Date(JSON.parse(localStorage.getItem("lastSaved")));
-    const lastUpdate = new Date(process.env.REACT_APP_LAST_UPDATE);
-
-    if((!savedData || !lastUpdate) || lastSaved < lastUpdate) {
-      this.getData();
-    } else {
-      this.assignChars(savedData);
-    }
+    this.assignChars(charsData);
   }
 
   assignChars = chars => {
     const cha = Object.values(chars);
-    cha.sort((a,b) => (a.place > b.place) ? 1 : ((b.place > a.place) ? -1 : 0));
+    cha.sort((a,b) => a.place - b.place);
 
     this.addClassesToFiletrs(cha);
     this.setState({ chars: cha, filteredChars: cha });
@@ -174,7 +167,10 @@ class AllChars extends React.Component {
           </div>
         </div>
         {this.state.calc && <DamageCalc />}
-        <div className="footer">Made by Neji1113 / Patryqss</div>
+        <div className="footer">
+          <p className='notice'>Important notice: The update from August 2022 was probably the last one in NA-Helper. <a href="https://naruto-boards.net/viewtopic.php?p=135081#p135081" target="_blank">Read more HERE</a></p>
+          Made by Neji1113 / Patryqss
+        </div>
       </>
     );
   }
